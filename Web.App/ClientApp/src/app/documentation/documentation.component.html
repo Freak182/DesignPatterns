@@ -1,0 +1,557 @@
+<section class="pb-4">
+    <!-- Introduction -->
+    <div class="mb-2">
+      <h1>Introduction</h1>
+      <div class="m-2">
+
+        <div class="mb-4" style="text-align: justify;">
+          Cette section a pour but d'ouvrir la discussion ainsi que de présenter quelques concepts de base qui serviront de concepts fondamentaux pour le reste de la présentation. Elle a également pour but d'ouvrir votre curiosité envers Uncle Bob. Nous survolerons ainsi rapidement quelques-uns des concepts qu'il élabore dans ses ouvrages.
+        </div>
+        <!-- Clean code -->
+        <div class="mb-2">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Clean code
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <h2>Ask yourself : What does it means to have a clean code? (Discussion)</h2>
+            <div class="m-2">
+              <li>The Boy Scout Rule: "<i>Check the code in cleaner than you checked it out.</i>"</li>
+            </div>
+            <!-- Answer -->
+            <mat-expansion-panel class="mat-panel-alternate">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Examples
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="m-2">
+                <!-- Names -->
+                <mat-card class="mb-2 mat-elevation-z8">
+                  <mat-card-header>
+                    <mat-card-title>Names</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <ul>
+                      <li>Use Pronounceable names</li>
+                      <li>Avoid Encodings - Revealing Intent</li>
+                      <li>Ubiquitous Language</li>
+                    </ul>
+                    Source : <a href="https://exelearning.org/wiki/OttingersNaming/" target="_blank">Ottinger's Rules for Variable and Class Naming</a>
+                  </mat-card-content>
+                </mat-card>
+
+                <!-- Functions -->
+                <mat-card class="mb-2 mat-elevation-z8">
+                  <mat-card-header>
+                    <mat-card-title>Functions</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <ul>
+                      <li>Smallness</li>
+                      <li>Step-down Rule (Top-To-Bottom readability)</li>
+                      <li>Single responsability</li>
+                      <li>Tell-Don't-Ask</li>
+                      <li>Structured Programming (Sequence, Repetition, Selection, etc.)</li>
+                    </ul>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </mat-expansion-panel>
+            
+          </mat-expansion-panel>
+        </div>
+      
+        <!-- Clean architecture -->
+        <div class="mb-2">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Clean architecture
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <!-- 5 principles -->
+            <div class="mb-2">
+              <h2>The 5 principles</h2>
+              <div class="m-2">
+                <ul>
+                  <li>Testable</li>
+                  <li>Independent of Framworks</li>
+                  <li>Independent of UI</li>
+                  <li>Independent of Database</li>
+                  <li>Independent of external agency</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Object-Oriented Programming -->
+            <div class="mb-2">
+              <mat-expansion-panel class="mat-panel-alternate">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Object-Oriented Programming
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="m-2">
+                  <h2>What is Object-Oriented programming ?</h2>
+                  <div class="m-2">
+                    According to wikipedia :
+                    <div class="m-2">
+                      Object-oriented programming (OOP) is a programming paradigm based on the concept of objects, which can contain data and code. The data is in the form of fields (often known as attributes or properties), and the code is in the form of procedures (often known as methods).
+                    </div>
+                  </div>
+
+                  <!-- Dependency Inversion -->
+                  <mat-card class="mb-2 mat-elevation-z8">
+                    <mat-card-header>
+                      <mat-card-title>Dependency Inversion</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <h3>
+                        Definition of the Dependency Inversion Principle
+                      </h3>
+                      <div class="mb-2" style="text-align: justify;">
+                        The general idea of this principle is as simple as it is important: High-level modules, which provide complex logic, should be easily reusable and unaffected by changes in low-level modules, which provide utility features. To achieve that, you need to introduce an abstraction that decouples the high-level and low-level modules from each other.
+
+                        Based on this idea, Robert C. Martin's definition of the Dependency Inversion Principle consists of two parts:
+                        
+                        <ul class="mt-2">
+                          <li>High-level modules should not depend on low-level modules. Both should depend on abstractions.</li>
+                          <li>Abstractions should not depend on details. Details should depend on abstractions.</li>
+                        </ul>
+                        
+                        
+                        An important detail of this definition is, that high-level and low-level modules depend on the abstraction. The design principle does not just change the direction of the dependency, as you might have expected when you read its name for the first time. It splits the dependency between the high-level and low-level modules by introducing an abstraction between them. So in the end, you get two dependencies:
+                        
+                        <ul class="mt-2">
+                          <li>the high-level module depends on the abstraction, <strong>and</strong></li>
+                          <li>the low-level depends on the same abstraction.</li>
+                        </ul>
+
+                        Dependency Inversion is the 5th principle of SOLID design principle
+
+                        Source :
+                        <ul>
+                          <li><a href="https://stackify.com/dependency-inversion-principle/" target="_blank">Dependacy inversion</a></li>
+                          <li><a href="https://www.baeldung.com/solid-principles" target="_blank">SOLID</a></li>
+                        </ul>
+                      </div>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+              </mat-expansion-panel>
+            </div>
+
+            <!-- Functional programming -->
+            <div class="mb-2">
+              <mat-expansion-panel class="mat-panel-alternate">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Functional programming
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="m-2">
+                  <!-- What is functional programming ? -->
+                  <span>
+                    <h2>What is functional programming ?</h2>
+                    <div class="m-2">
+                      According to wikipedia :
+                      <div class="m-2">
+                        In computer science, functional programming is a programming paradigm where programs are constructed by applying and composing functions. It is a declarative programming paradigm in which function definitions are trees of expressions that map values to other values, rather than a sequence of imperative statements which update the running state of the program.
+                      </div>
+                    </div>
+                    <div class="m-2">
+                      Some key concept :
+                      <ul>
+                        <li>You pass function as parameter instead of objects</li>
+                        <li>Values are immutable</li>
+                        <li>Pure functions - Allows for predictable behavior</li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <!-- RXJS -->
+                  <mat-card class="mb-2 mat-elevation-z8">
+                    <mat-card-header>
+                      <mat-card-title>RXJS - What is RXJS ?</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <h2></h2>
+                      <div class="m-2">
+                        RXJS, c'est le LINQ de JavaScript. Ca permets de programmer des fonctions asynchrone basées sur des événements observables. Les 5 concepts essentiels sont :
+                        <ul>
+                          <li>Observable: represents the idea of an invokable collection of future values or events.</li>
+                          <li>Observer: is a collection of callbacks that knows how to listen to values delivered by the Observable.</li>
+                          <li>Subscription: represents the execution of an Observable, is primarily useful for cancelling the execution.</li>
+                          <li>Operators: are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, concat, reduce, etc.</li>
+                          <li>Subject: is equivalent to an EventEmitter, and the only way of multicasting a value or event to multiple Observers.</li>
+                          <li>Schedulers: are centralized dispatchers to control concurrency, allowing us to coordinate when computation happens on e.g. setTimeout or requestAnimationFrame or others.</li>
+                        </ul>
+                        En front-end, RXJS est souvent considéré comme essentiel a tout désir d'implémentation de programmation fonctionnel.
+                      </div>
+                      Want know more? Click here! : <a href="https://rxjs.dev/guide/overview" target="_blank">RXJS Overview</a>
+                    </mat-card-content>
+                  </mat-card>
+                        
+                  Si vous cherchez un ouvrage pour vous initier au concept, petite recommendation personelle : <br>
+                  <a href="https://www.amazon.ca/Grokking-Simplicity-software-functional-thinking/dp/1617296201" target="_blank" class="font-weight-bold">Grokking Simplicity : Taming complex software with functional thinking</a>
+                </div>
+              </mat-expansion-panel>
+            </div>
+
+            <hr class="m-2" style="color: silver;">
+            <div>
+              Want know more?
+              <ul>
+                <li>More information on Object-Oriented programming vs Functional programming : <a href="https://circleci.com/blog/functional-vs-object-oriented-programming/?psafe_param=1&utm_source=google&utm_medium=sem&utm_campaign=sem-google-dg--uscan-en-dsa-tROAS-auth-nb&utm_term=g_-_c__dsa_&utm_content=&gclid=CjwKCAjwsKqoBhBPEiwALrrqiC9oD_y5Y8M_8Btp5OB2xONg7OJhb7kk8oaf7gwSbr8BDM6Qn4-hFxoCiG4QAvD_BwE" target="_blank">Link</a></li>
+                <li>More information on Uncle bob's blog on Clean Architecture : <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html" target="_blank">Link</a></li>
+              </ul>
+            </div>
+          </mat-expansion-panel>
+        </div>
+      
+        <!-- Solid -->
+        <div class="mb-2">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                SOLID
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            SOLID est un principe de programmation visant a nous encourager a créer des applications plus facilement maintenable, compréhensible et flexible. Ses principes sont :
+            <ul>
+              <li><strong>S</strong>ingle Responsibility</li>
+              <li><strong>O</strong>pen/Closed</li>
+              <li><strong>L</strong>iskov Substitution</li>
+              <li><strong>I</strong>nterface Segregation</li>
+              <li><strong>D</strong>ependency Inversion</li>
+            </ul>
+
+            <!-- Single Responsibility -->
+            <div class="mb-2">
+              <mat-expansion-panel class="mat-panel-alternate">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <strong>S</strong>ingle Responsibility
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="m-2">
+                  <div>Toutes classes ne devraient avoir qu'<strong>une seule</strong> responsabilité. De plus, elle ne devrait avoir qu'<strong>une</strong> raison de changer.</div>
+                  <div>Comment ça nous aide ?</div>
+                  <ul>
+                    <li>Testing - moins de test cases</li>
+                    <li>Lower coupling - moins de dépendance</li>
+                    <li>Organization - des classes plus petites et mieux organisées</li>
+                  </ul>
+                </div>
+              </mat-expansion-panel>
+            </div>
+
+            <!-- Open/Closed -->
+            <div class="mb-2">
+              <mat-expansion-panel class="mat-panel-alternate">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <strong>O</strong>pen/Closed
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="m-2">
+                  <div>Toutes classes devraient etre ouvertes aux entensions, mais fermé aux modifications. Ainsi, nous nous bloquons de modifier du code existant pouvant causer des régressions.</div>
+                  <div>Comment ça nous aide ?</div>
+                  <ul>
+                    <li>Réduit les risques de régression</li>
+                    <li>Permets de versionner les modifications</li>
+                    <li>Réduit les risques de briser des APIs externes ayant une dépendance</li>
+                  </ul>
+                </div>
+              </mat-expansion-panel>
+            </div>
+
+            <!-- Liskov Substitution -->
+            <div class="mb-2">
+              <mat-expansion-panel class="mat-panel-alternate">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <strong>L</strong>iskov Substitution
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="m-2">
+                  <div>Si une nouvelle classe remplaçe une existante, a tout moment, nous devrions pouvoir utiliser ou revenir à l'ancienne classe sans rien briser.</div>
+                  <div>Comment ça nous aide ?</div>
+                  <ul>
+                    <li>Réduit les risques de régression</li>
+                    <li>Réduit les risques de briser des APIs externes ayant une dépendance</li>
+                  </ul>
+                </div>
+              </mat-expansion-panel>
+            </div>
+
+            <!-- Interface Segregation -->
+            <div class="mb-2">
+              <mat-expansion-panel class="mat-panel-alternate">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <strong>I</strong>nterface Segregation
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="m-2">
+                  <div>Les grandes classes ou interfaçes devraient être découper en plusieurs interfaçes ou classes. </div>
+                  <div>Comment ça nous aide ?</div>
+                  <ul>
+                    <li>Permets de créer des fonctions ou des classes aux tâches très spécifiques</li>
+                    <li>Réduit la complexité des tests à écrires</li>
+                  </ul>
+                </div>
+              </mat-expansion-panel>
+            </div>
+
+            <!-- Dependency Inversion -->
+            <div class="mb-2">
+              <mat-expansion-panel class="mat-panel-alternate">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <strong>D</strong>ependency Inversion
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="m-2">
+                  <div>Les classes ou modules devraient pointer vers des abstractions plutôt que d'avoir des dépendances entre-eux.</div>
+                  <div>Comment ça nous aide ?</div>
+                  <ul>
+                    <li>Permets de créer des fonctions ou des classes aux tâches très spécifiques</li>
+                    <li>Réduit la complexité des tests à écrires</li>
+                  </ul>
+
+                  <!-- The keyboard example - not following guidelines -->
+                  <div class="mb-2">
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          The keyboard example - not following guidelines
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <div class="m-2">
+                        <mat-form-field matInput style="width: -webkit-fill-available" appearance="outline">
+                          <textarea matInput readonly style="min-height: 240px; width: -webkit-fill-available">
+  public class Windows98Machine {
+  
+    private final StandardKeyboard keyboard;
+    private final Monitor monitor;
+                          
+    public Windows98Machine() {
+      monitor = new Monitor();
+      keyboard = new StandardKeyboard();
+    }                    
+  }</textarea>
+                        </mat-form-field>
+                      </div>
+                    </mat-expansion-panel>
+                  </div>
+                  
+                  <!-- The keyboard example - according to guidelines -->
+                  <div class="mb-2">
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          The keyboard example - according to guidelines
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <div class="m-2">
+                        <mat-form-field style="width: -webkit-fill-available" appearance="outline">
+                          <textarea matInput readonly style="min-height: 320px; width: -webkit-fill-available">
+  public interface Keyboard { }
+  public class StandardKeyboard implements Keyboard { }
+  
+  public class Windows98Machine{
+  
+    private final Keyboard keyboard;
+    private final Monitor monitor;
+                          
+    public Windows98Machine(Keyboard keyboard, Monitor monitor) {
+      this.keyboard = keyboard;
+      this.monitor = monitor;
+    }
+  }</textarea>
+                        </mat-form-field>
+                      </div>
+                    </mat-expansion-panel>
+                  </div>
+                </div>
+              </mat-expansion-panel>
+            </div>
+            <hr class="m-2" style="color: silver;">
+            <div class="mt-2">
+              Want know more ? <a href="https://www.baeldung.com/solid-principles" target="_blank">A Solid Guide to SOLID Principles</a>
+            </div>
+          </mat-expansion-panel>
+        </div>
+
+        <!-- TDD -->
+        <div class="mb-2">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                TDD
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="m-2">
+              <span>
+                <h2>What is Test-driven development ?</h2>
+                <!-- Definition -->
+                <div class="m-2">
+                  According to wikipedia :
+                  <div class="m-2">
+                    <strong>Test-driven development (TDD)</strong> is a software development process relying on software requirements being converted to test cases before software is fully developed, and tracking all software development by repeatedly testing the software against all test cases. This is as opposed to software being developed first and test cases created later.
+                  </div>
+                </div>
+                <!-- Benefits -->
+                <div class="m-2">
+                  Some benifits :
+                  <ul>
+                    <li>Reduced Debugging</li>
+                    <li>Higher level of documentation</li>
+                    <li>Design Improvement</li>
+                    <li>Easier refactoring</li>
+                  </ul>
+                </div>
+                <!-- Three laws of TDD -->
+                <div class="m-2">
+                  Lorsqu'on parle de TDD, nous entendons souvent parler des Three Laws of TDD. Les voici :
+                  <ul>
+                    <li>You are not allowed to write any production code unless it is to make a failing unit test pass</li>
+                    <li>You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures.</li>
+                    <li>You are not allowed to write any more production code than is sufficient to pass the one failing unit test.</li>
+                  </ul>
+                </div>
+              </span>
+            </div>
+            <hr class="m-2" style="color: silver;">
+            <div class="mt-2">
+              Want know more ? <a href="https://www.ibm.com/garage/method/practices/code/practice_test_driven_development/" target="_blank">Test-driven development</a>
+            </div>
+          </mat-expansion-panel>
+        </div>
+      </div>
+    </div>
+
+    <hr class="m-2" style="color: silver;">
+
+    <!-- Software architecture -->
+    <div class="mb-2">
+      <h1>Software architecture</h1>
+      <div class="m-2">
+
+        <div class="mb-4" style="text-align: justify;">
+          Cette section a pour but de vous présenter quelques concepts d'achitecture qui seront souvent vu dans des applications utilisant les micro-services. Ceux-ci vous permetteront de mieux gérer le traffic, de minimiser les responsabilité de chaque module et facilitera le versionning de votre database.
+        </div>
+        <!-- Sagas -->
+        <div class="mb-2">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Sagas
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <h2>What does it mean to be clean?</h2>
+            Data : https://microservices.io/patterns/data/saga.html
+          </mat-expansion-panel>
+        </div>
+
+        <!-- Migration & DataSeeding -->
+        <div class="mb-2">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Migration & DataSeeding
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <h2>Migration</h2>
+            <p>
+              Data : https://learn.microsoft.com/en-us/ef/ef6/modeling/code-first/migrations/
+            </p>
+            <h2>Dataseeding</h2>
+            <p>
+              Data : https://learn.microsoft.com/en-us/ef/core/modeling/data-seeding
+            </p>
+          </mat-expansion-panel>
+        </div>
+
+        <!-- Proxy -->
+        <div class="mb-2">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Proxy
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <h2>What is Proxy design pattern ?</h2>
+            Data : https://en.wikipedia.org/wiki/Proxy_pattern
+          </mat-expansion-panel>
+        </div>
+      </div>
+    </div>
+
+    <hr class="m-2" style="color: silver;">
+
+    <!-- Design patterns -->
+    <div class="mb-2">
+      <h1>Design patterns</h1>
+
+      <!-- AAA -->
+      <div class="m-2">
+        <div class="mb-2">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                AAA
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <h2>TDD - AAA Design pattern</h2>
+          </mat-expansion-panel>
+        </div>
+      </div>
+      
+      <!-- State pattern -->
+      <div class="m-2">
+        <div class="mb-2">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                State pattern
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <h2>State machine</h2>
+          </mat-expansion-panel>
+        </div>
+      </div>
+      
+      <!-- Composite -->
+      <div class="m-2">
+        <div class="mb-2">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Client-side UI composition
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <h2>Template and micro-component</h2>
+          </mat-expansion-panel>
+        </div>
+      </div>
+      
+      <!-- Mediator -->
+      <div class="m-2">
+        <div class="mb-2">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Mediator
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <h2>How to have a clean back-end</h2>
+          </mat-expansion-panel>
+        </div>
+      </div>
+    </div>
+</section>
