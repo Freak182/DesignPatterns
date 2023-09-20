@@ -191,7 +191,7 @@
                         </ul>
                         En front-end, RXJS est souvent considéré comme essentiel a tout désir d'implémentation de programmation fonctionnel.
                       </div>
-                      Want know more? Click here! : <a href="https://rxjs.dev/guide/overview" target="_blank">RXJS Overview</a>
+                      Want to know more? Click here! : <a href="https://rxjs.dev/guide/overview" target="_blank">RXJS Overview</a>
                     </mat-card-content>
                   </mat-card>
                         
@@ -203,7 +203,7 @@
 
             <hr class="m-2" style="color: silver;">
             <div>
-              Want know more?
+              Want to know more?
               <ul>
                 <li>More information on Object-Oriented programming vs Functional programming : <a href="https://circleci.com/blog/functional-vs-object-oriented-programming/?psafe_param=1&utm_source=google&utm_medium=sem&utm_campaign=sem-google-dg--uscan-en-dsa-tROAS-auth-nb&utm_term=g_-_c__dsa_&utm_content=&gclid=CjwKCAjwsKqoBhBPEiwALrrqiC9oD_y5Y8M_8Btp5OB2xONg7OJhb7kk8oaf7gwSbr8BDM6Qn4-hFxoCiG4QAvD_BwE" target="_blank">Link</a></li>
                 <li>More information on Uncle bob's blog on Clean Architecture : <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html" target="_blank">Link</a></li>
@@ -382,7 +382,7 @@
             </div>
             <hr class="m-2" style="color: silver;">
             <div class="mt-2">
-              Want know more ? <a href="https://www.baeldung.com/solid-principles" target="_blank">A Solid Guide to SOLID Principles</a>
+              Want to know more ? <a href="https://www.baeldung.com/solid-principles" target="_blank">A Solid Guide to SOLID Principles</a>
             </div>
           </mat-expansion-panel>
         </div>
@@ -428,7 +428,7 @@
             </div>
             <hr class="m-2" style="color: silver;">
             <div class="mt-2">
-              Want know more ? <a href="https://www.ibm.com/garage/method/practices/code/practice_test_driven_development/" target="_blank">Test-driven development</a>
+              Want to know more ? <a href="https://www.ibm.com/garage/method/practices/code/practice_test_driven_development/" target="_blank">Test-driven development</a>
             </div>
           </mat-expansion-panel>
         </div>
@@ -450,11 +450,151 @@
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Sagas
+                Pattern: Saga [Choreography | Orchestration]
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <h2>What does it mean to be clean?</h2>
-            Data : https://microservices.io/patterns/data/saga.html
+            <h2>What is the Saga design pattern ?</h2>
+            <div class="m-2">
+              C'est une manière de gérer la cohérence au travers un amalgame de microservices lors d'une transaction distribué. C'est une séquence (Saga) de transaction qui met à jour un ensemble de services, chacun émettant un message ou évènement qui trigger la prochaine étape. Nous parlerons parfois C'est une manière de gérer la cohérence au travers un amalgame de microservices lors d'une transaction distribué. C'est une séquence (Saga) de transaction qui met à jour un ensemble de services, chacun émettant un message ou évènement qui trigger la prochaine étape. Nous parlerons parfois d'ochestration ou de chorégraphie.<br>
+              <!-- Image Pattern : Saga -->
+              <div class="mb-2" style="display: flex;justify-content: center;">
+                <div>
+                  <img alt="source: Microsoft" src="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/saga/images/saga-overview.png" />
+                  <div><small>*All rights owned by Microsoft</small></div>
+                </div>
+              </div>
+
+              <!-- When to use -->
+              <span>
+                <h3>Quand utiliser ce pattern?</h3>
+                <ul>
+                  <li>Lorsque vous désirez vous assurer de la consistance d'une donnée au travers multiple système</li>
+                  <li>Lorsque vous désirez effectuer des rollbacks ou correctifs si un des appels échoue</li>
+                </ul>
+              </span>
+
+              <!-- When not to use -->
+              <span>
+                <h3>Quand ne pas utiliser ce pattern?</h3>
+                <ul>
+                  <li>Transactions fortements couplées</li>
+                  <li><a title="A compensating transaction is application-specific. It relies on the application having sufficient information to be able to undo the effects of each step in a failed operation. You should define the steps in a compensating transaction as idempotent commands." href="https://learn.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction" target="_blank">Compensating Transaction pattern</a></li>
+                  <li>Dépendances circulaires</li>
+                </ul>
+              </span>
+
+              <!-- Choreography -->
+              <div class="mb-2">
+                <mat-expansion-panel class="mat-panel-alternate">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Pattern: Choreography
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="m-2">
+                    <h2>What is the Choreography design pattern ?</h2>
+                    <div class="m-2">
+                      C'est une saga avec un point central de coordination. Avec une chorégraphique, chaque transaction émets un événement sur le domaine qui trigger des transactions locales dans les autres services.
+                      <!-- Image : Message broker -->
+                      <div class="mb-2" style="display: flex;justify-content: center;">
+                        <div>
+                          <img style="max-height: 288px;" alt="source: Microsoft" src="https://learn.microsoft.com/en-us/azure/architecture/patterns/_images/choreography-pattern.png" />
+                          <div><small>*All rights owned by Microsoft</small></div>
+                        </div>
+                      </div>
+
+                      <!-- Benefits -->
+                      <span>
+                        <h3>Les avantages : </h3>
+                        <ul>
+                          <li>Bon pour les séries d'événements simples ayant peu de participants et ne nécessitant pas de logique de coordination</li>
+                          <li>Nécessite très peu de maintenance</li>
+                          <li>Aucun point d'échec, puisque chaque système est indépendant au travers la saga</li>
+                        </ul>
+                      </span>
+        
+                      <!-- Drawbacks -->
+                      <span>
+                        <h3>Les désavantages : </h3>
+                        <ul>
+                          <li>Complexité d'ajout de nouvels étapes ; Difficulté de tenir comptes de quel service écoute quel événement</li>
+                          <li>Complexité des tests d'intégrations</li>
+                          <li>Risques de dépendances circulaires</li>
+                        </ul>
+                      </span>
+                    </div>
+
+                    <hr class="m-2" style="color: silver;">
+                    <div class="mt-2">
+                      Want to know more ? 
+                      <ul>
+                        <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/choreography" target="_blank">Pattern: Choreography</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </mat-expansion-panel>
+              </div>
+
+              <!-- Orchestration -->
+              <div class="mb-2">
+                <mat-expansion-panel class="mat-panel-alternate">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Pattern : Orchestration
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="m-2">
+                    <h2>What is the Orchestration design pattern ?</h2>
+                    <div class="m-2">
+                      L'orchestration est un moyen de coordonner les sagas où un contrôleur centralisé indique aux participants de la saga quelles transactions locales exécuter. L'orchestrateur de la saga gère toutes les transactions et indique aux participants quelle opération effectuer en fonction des événements. L'orchestrateur exécute les requêtes saga, stocke et interprète les états de chaque tâche et gère la reprise après échec avec des transactions compensatoires.<br>
+                      <!-- Image : Orchestrator -->
+                      <div class="mb-2" style="display: flex;justify-content: center;">
+                        <div>
+                          <img alt="source: Microsoft" src="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/saga/images/orchestrator.png" />
+                          <div><small>*All rights owned by Microsoft</small></div>
+                        </div>
+                      </div>
+  
+                      <!-- Benefits -->
+                      <span>
+                        <h3>Les avantages : </h3>
+                        <ul>
+                          <li>Idéal pour les séries d'événements complexes impliquant de nombreux participants ou de nouveaux participants ajoutés au fil du temps.</li>
+                          <li>Approprié quand un contrôle est exercé sur chaque participant au processus et sur la série d'événements</li>
+                          <li>N'introduit pas de dépendances cycliques, car l'orchestrateur dépend unilatéralement des participants à la saga.</li>
+                          <li>Les participants à la saga n’ont pas besoin de connaître les commandes pour d'autres participants. Une séparation claire des préoccupations simplifie la logique métier.</li>
+                        </ul>
+                      </span>
+        
+                      <!-- Drawbacks -->
+                      <span>
+                        <h3>Les inconvénients : </h3>
+                        <ul>
+                          <li>Une complexité de conception supplémentaire nécessite l'implémentation d'une logique de coordination.</li>
+                          <li>Il y a un point de défaillance supplémentaire parce que l'orchestrateur gère le flux de travail complet.</li>
+                        </ul>
+                      </span>
+                    </div>
+
+                    <hr class="m-2" style="color: silver;">
+                    <div class="mt-2">
+                      Want to know more ? 
+                      <ul>
+                        <li><a href="https://learn.microsoft.com/en-us/dotnet/architecture/serverless/orchestration-patterns" target="_blank">Pattern: Orchestration</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </mat-expansion-panel>
+              </div>
+            </div>
+            <hr class="m-2" style="color: silver;">
+            <div class="mt-2">
+              Want to know more ? 
+              <ul>
+                <li><a href="https://microservices.io/patterns/data/saga.html" target="_blank">Pattern: Saga</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga" target="_blank">Saga distributed transactions pattern on Azure DevOps</a></li>
+              </ul>
+            </div>
           </mat-expansion-panel>
         </div>
 
