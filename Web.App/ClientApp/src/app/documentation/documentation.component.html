@@ -455,7 +455,7 @@
             </mat-expansion-panel-header>
             <h2>What is the Saga design pattern ?</h2>
             <div class="m-2">
-              C'est une manière de gérer la cohérence au travers un amalgame de microservices lors d'une transaction distribué. C'est une séquence (Saga) de transaction qui met à jour un ensemble de services, chacun émettant un message ou évènement qui trigger la prochaine étape. Nous parlerons parfois C'est une manière de gérer la cohérence au travers un amalgame de microservices lors d'une transaction distribué. C'est une séquence (Saga) de transaction qui met à jour un ensemble de services, chacun émettant un message ou évènement qui trigger la prochaine étape. Nous parlerons parfois d'ochestration ou de chorégraphie.<br>
+              C'est une manière de gérer la cohérence au travers un amalgame de microservices lors d'une transaction distribué. C'est une séquence (Saga) de transaction qui met à jour un ensemble de services, chacun émettant un message ou évènement qui trigger la prochaine étape. Nous parlerons parfois d'ochestration ou de chorégraphie.<br>
               <!-- Image Pattern : Saga -->
               <div class="mb-2" style="display: flex;justify-content: center;">
                 <div>
@@ -540,7 +540,7 @@
                 <mat-expansion-panel class="mat-panel-alternate">
                   <mat-expansion-panel-header>
                     <mat-panel-title>
-                      Pattern : Orchestration
+                      Pattern: Orchestration
                     </mat-panel-title>
                   </mat-expansion-panel-header>
                   <div class="m-2">
@@ -644,10 +644,62 @@
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                AAA
+                Pattern: AAA
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <h2>TDD - AAA Design pattern</h2>
+            <h2>TDD - AAA Design pattern : Arrange, Act and Assert</h2>
+            <div class="m-2">
+              Le modèle AAA (Arrange-Act-Assert) est devenu presque un standard dans l'industrie. Il suggère que vous deviez diviser votre méthode de test en trois sections: organiser, agir et affirmer.<br>
+              <!-- Basic construct -->
+              <mat-form-field matInput style="width: -webkit-fill-available" appearance="outline">
+                <textarea matInput readonly style="min-height: 170px; width: -webkit-fill-available">
+// arrange
+var repository = Substitute.For<IClientRepository>();
+var client = new Client(repository);
+// act
+client.Save();
+// assert
+mock.Received.SomeMethod();</textarea>
+              </mat-form-field>
+
+              <!-- When to use -->
+              <span>
+                <h3>Les avantages :</h3>
+                <ul>
+                  <li>Aide à garder les tests concis et focus</li>
+                  <li>Rend les tests plus facile a écrire et comprendre</li>
+                  <li>Rend le debuggage plus facile</li>
+                </ul>
+              </span>
+
+              <!-- Example-->
+              <div class="m-2">
+                <mat-form-field matInput style="width: -webkit-fill-available" appearance="outline">
+                  <textarea matInput readonly style="min-height: 340px; width: -webkit-fill-available">
+  describe('addTwoNumbers', () => {
+    test('1 and 2 make 3', () => {
+        // Arrange
+        const argA = 1;
+        const argB = 2;
+        const assert = 3;
+
+        // Act
+        const result = addTwoNumbers(argA, argB);
+
+        // Assert
+        expect(result).toBe(assert);
+    });
+});</textarea>
+                </mat-form-field>
+              </div>
+            </div>
+            <hr class="m-2" style="color: silver;">
+            <div class="mt-2">
+              Want to know more ? 
+              <ul>
+                <li><a href="https://medium.com/@pjbgf/title-testing-code-ocd-and-the-aaa-pattern-df453975ab80" target="_blank">Pattern: AAA</a></li>
+              </ul>
+            </div>
           </mat-expansion-panel>
         </div>
       </div>
@@ -658,10 +710,43 @@
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                State pattern
+                Pattern: State
               </mat-panel-title>
             </mat-expansion-panel-header>
             <h2>State machine</h2>
+            <div class="m-2">
+              Le principe d'une state machine permets de suivre l'état d'un object selon une série d'opération.<br>
+              Il est généralement composé de : <br>
+              <ol>
+                <li>la classe State, qui définit l'abstraction des comportements du patron</li>
+                <li>la classe Contexte, qui s'occupe de l'interfaçage du patron avec le reste de son contexte (l'application).</li>
+              </ol>
+              <!-- Image : Design Graph -->
+              <div class="mb-2" style="display: flex;justify-content: center;">
+                <div>
+                  <img style="max-height: 288px;" src="https://sourcemaking.com/files/v2/content/patterns/State1.png" />
+                  <div><small>*All rights owned by SourceMaking</small></div>
+                </div>
+              </div>
+              <!-- Statements -->
+              <ul>
+                <li>La classe State permet via ses spécialisations de créer et gérer dynamiquement les comportements dont l'application aura besoin.</li>
+                <li>La classe Contexte qui permet éventuellement à l'application de choisir le comportement à mettre en œuvre et surtout d'orchestrer l'exécution des comportements.</li>
+              </ul>
+              <!-- Example Front-End Angular -->
+              Ce pattern peut tant être appliqué à l'état d'un object dans une DataBase, qu'au concept de Template UI. Un example commun sera une page container, gérant la logique d'une certaine transaction, et selon l'état, plusieurs différent template peuvent être appelé.<br>
+              <div class="mt-2">
+                <strong>Un example en Angular : <a href="https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/" target="_blank">Angular University : ng-template</a></strong>
+              </div>
+            </div>
+            <hr class="m-2" style="color: silver;">
+            <div class="mt-2">
+              Want to know more ? 
+              <ul>
+                <li><a href="https://refactoring.guru/design-patterns/state" target="_blank">Refactoring Guru - Pattern: AAA</a></li>
+                <li><a href="https://sourcemaking.com/design_patterns/state" target="_blank">Pattern: AAA</a></li>
+              </ul>
+            </div>
           </mat-expansion-panel>
         </div>
       </div>
@@ -672,10 +757,56 @@
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Client-side UI composition
+                Pattern: Client-side UI composition
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <h2>Template and micro-component</h2>
+            <h2>Template and micro-component | Micro-Front-End</h2>
+            <div class="m-2">
+              Ce pattern est normalement utilisé lorsque des front-end deviennent trop massif. Nous changeons alors le développement de manière à mettre l'emphase sur les attributs et résultats qui peuvent ressortir pour l'utilisateur. Il permet notamment de découpler le développement et facilite le développement simultané de plusieurs feature sans merge conflicts.<br>
+              <!-- Image : Tutorialspoints -->
+              <div class="mb-2" style="display: flex;justify-content: center;">
+                <div>
+                  <img style="max-height: 288px;" src="https://www.tutorialspoint.com/microservices_design_patterns/images/client_side_ui_composition.jpg" />
+                  <div><small>*All rights owned by tutorialspoint</small></div>
+                </div>
+              </div>
+              <!-- Image : Tutorialspoints -->
+              <div class="mb-2" style="display: flex;justify-content: center;">
+                <div>
+                  <img style="max-height: 288px;" src="https://learn.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/media/microservice-based-composite-ui-shape-layout/microservice-generate-composite-ui.png" />
+                  <div><small>*All rights owned by Martin Fowler</small></div>
+                </div>
+              </div>
+
+              <!-- Avantages -->
+              <span>
+                <h3>Les avantages :</h3>
+                <ul>
+                  <li>Déploiement indépendant</li>
+                  <li>Équipe autonome : Réduis le couplage</li>
+                </ul>
+              </span>
+
+              <!-- Image : Tutorialspoints -->
+              <div class="mb-2" style="display: flex;justify-content: center;">
+                <div>
+                  <img style="max-height: 288px;" src="https://martinfowler.com/articles/micro-frontends/deployment.png" />
+                  <div><small>*All rights owned by Microsoft</small></div>
+                </div>
+              </div>
+
+              <!-- Example Front-End Angular -->
+              <strong>Comment pourriez-vous combiner ce pattern au state pattern? au AAA?</strong>
+            </div>
+            <hr class="m-2" style="color: silver;">
+            <div class="mt-2">
+              Want to know more ? 
+              <ul>
+                <li><a href="https://refactoring.guru/design-patterns/state" target="_blank">Tutorialspoint - Client Side UI Composition</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/microservice-based-composite-ui-shape-layout" target="_blank">Microsoft - Creating composite UI based on microservices</a></li>
+                <li><a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">Martin Fowler - Micro-FrontEnds</a></li>
+              </ul>
+            </div>
           </mat-expansion-panel>
         </div>
       </div>
@@ -686,7 +817,7 @@
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Mediator
+                Pattern: Mediator
               </mat-panel-title>
             </mat-expansion-panel-header>
             <h2>How to have a clean back-end</h2>
