@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Web.App.Controllers
 {
@@ -14,6 +16,7 @@ namespace Web.App.Controllers
     };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IMediator _mediator;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
@@ -30,6 +33,107 @@ namespace Web.App.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        public class ErrorInfo
+        {
+
+        }
+
+        public class GetPriceTicketPriceResponse
+        {
+
+        }
+
+        // 
+        public class GetPlaneTicketQueryDto : IRequest<GetPriceTicketPriceResponse>
+        {
+            private int flightId;
+
+            public GetPlaneTicketQueryDto(int flightId)
+            {
+                this.flightId = flightId;
+            }
+        }
+
+        /// <summary>
+        /// Get plane ticket price for a specific flight
+        /// </summary>
+        /// <param name="flightId">Flight Id</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <response code="200">Succesfully returned the flight price</response>
+        /// <response code="204">No flight was found</response>
+        /// <response code="400">An error has occured</response>
+        /// <response code="403">Unauthorized/Forbiden</response>
+        /// <response code="500">Internal/Service error(s)</response>
+        [HttpGet]
+        [Route("resources/flights/{flightId:int}/price")]
+        [ProducesResponseType(typeof(GetPriceTicketPriceResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetPlaneTicketPrice([FromQuery][Required] int flightId, CancellationToken cancellationToken)
+        {
+            return Ok(await _mediator.Send(new GetPlaneTicketQueryDto(flightId), cancellationToken));
+        }
+
+        /// <summary>
+        /// QueryHandler that updates a plane ticket price
+        /// </summary>
+        public class GetPlaneTicketQueryHandler : IRequestHandler<GetPlaneTicketQueryDto, GetPriceTicketPriceResponse>
+        {
+            public async Task<GetPriceTicketPriceResponse> Handle(GetPlaneTicketQueryDto query, CancellationToken cancellationToken)
+            {
+                // Get
+                // Map
+                // Return
+                return new GetPriceTicketPriceResponse();
+            }
+        }
+
+        /// <summary>
+        /// Update the price of a ticket for a specific flight
+        /// </summary>
+        /// <param name="flightId">Flight Id</param>
+        /// <param name="command">Update command</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("resources/flights/{flightId:int}/price")]
+        [ProducesResponseType(typeof(UpdateFlightPriceCommandResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdatePlaneTicketPrice([FromQuery][Required] int flightId, [FromBody][Required] UpdateFlightPriceCommandDto command, CancellationToken cancellationToken)
+        {
+            return Ok(await _mediator.Send(command, cancellationToken));
+        }
+
+        /// <summary>
+        /// Update the price of a plane ticket based on an updateCommand
+        /// </summary>
+        public class UpdateFlightPriceCommandHandler : IRequestHandler<UpdateFlightPriceCommandDto, UpdateFlightPriceCommandResponse>
+        {
+            public async Task<UpdateFlightPriceCommandResponse> Handle(UpdateFlightPriceCommandDto command, CancellationToken cancellationToken)
+            {
+                // Get
+                // Map
+                // Return
+                return new UpdateFlightPriceCommandResponse();
+            }
+        }
+
+        public class UpdateFlightPriceCommandDto : IRequest<UpdateFlightPriceCommandResponse>
+        {
+            int flightId { get; set; } 
+            int newPrice { get; set; }
+        }
+
+        public class UpdateFlightPriceCommandResponse
+        {
+            int flightId { get; set; }
         }
     }
 
@@ -90,5 +194,6 @@ namespace Web.App.Controllers
     //        // Change ticket price with EF CORE
     //    }
     //}
+
 }
 
