@@ -607,13 +607,34 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <h2>Migration</h2>
-            <p>
-              Data : https://learn.microsoft.com/en-us/ef/ef6/modeling/code-first/migrations/
-            </p>
-            <h2>Dataseeding</h2>
-            <p>
-              Data : https://learn.microsoft.com/en-us/ef/core/modeling/data-seeding
-            </p>
+            <div class="m-2">
+              Migration est une méthodologie permettant de faire évoluer votre base de donnée de manière incrémentielle. C'est un outil qui vous permet de faire des back-and-forth sur les différentes versions de votre base de données de manière code-based. Un des gros avantages sera d'être capable de gérer ces migrations à même vos déploiements automatisé.<br>
+              Selon Microsoft : 
+              <ul>
+                <li>Lors de l’introduction d’une modification du modèle de données, le développeur utilise des outils EF Core afin d’ajouter une migration correspondante décrivant les mises à jour nécessaires pour préserver la synchronisation du schéma de la base de données. EF Core compare le modèle actuel à un instantané de l’ancien modèle pour déterminer les différences et génère des fichiers sources de migration. Ces fichiers peuvent, comme n’importe quel fichier source, faire l’objet d’un suivi dans le contrôle de code source du projet.</li>
+                <li>Une fois générée, la nouvelle migration peut être appliquée à une base de données de différentes façons. EF Core enregistre toutes les migrations appliquées dans une table d’historique spéciale, ce qui lui permet de savoir quelles migrations ont été appliquées.</li>
+              </ul>
+            </div>
+              <!-- Image : Migration -->
+              <div class="mb-2" style="display: flex;justify-content: center;">
+                <div>
+                  <img style="max-height: 288px;" src="src\images\migration.png" />
+                </div>
+              </div>
+            <h2>Data Seeding</h2>
+            <div class="m-2">
+              
+            </div>
+
+            <hr class="m-2" style="color: silver;">
+            <div class="mt-2">
+              Want to know more ? 
+              <ul>
+                <li><a href="https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli" target="_blank">Microsoft - Migrations</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/ef/ef6/modeling/code-first/migrations/" target="_blank">Microsoft - Code First Migrations</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/ef/core/modeling/data-seeding" target="_blank">Microsoft - Data Seeding</a></li>
+              </ul>
+            </div>
           </mat-expansion-panel>
         </div>
 
@@ -628,6 +649,7 @@
             <h2>API Gateway Design Pattern</h2>
             <div class="m-2">
               Selon wikipedia :<br>
+              <!-- In general -->
               <div class="m-2">
                 A proxy, in its most general form, is a class functioning as an interface to something else. The proxy could interface to anything: a network connection, a large object in memory, a file, or some other resource that is expensive or impossible to duplicate. In short, a proxy is a wrapper or agent object that is being called by the client to access the real serving object behind the scenes.
               </div>
@@ -638,6 +660,7 @@
                 </div>
               </div>
 
+              <!-- In an API -->
               <div class="m-2">
                 Dans le cadre d'un API, le proxy se manifeste sous forme d'API gateway. Il peut servir de point centrale de gestion des permissions, contrôle du traffic, gestion des micro-frontends et autres. Il sert de point de répartition des communications avec les différents services. On appel souvent ce gateway un BFF lorsque nous parlons d'une application FrontEnd.
               </div>
