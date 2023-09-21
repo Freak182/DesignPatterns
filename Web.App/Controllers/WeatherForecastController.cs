@@ -45,17 +45,6 @@ namespace Web.App.Controllers
 
         }
 
-        // 
-        public class GetPlaneTicketQueryDto : IRequest<GetPriceTicketPriceResponse>
-        {
-            private int flightId;
-
-            public GetPlaneTicketQueryDto(int flightId)
-            {
-                this.flightId = flightId;
-            }
-        }
-
         /// <summary>
         /// Get plane ticket price for a specific flight
         /// </summary>
@@ -93,6 +82,19 @@ namespace Web.App.Controllers
         }
 
         /// <summary>
+        /// GetPlaneTicketQuery class, transforms into GetPriceTicketPriceResponse
+        /// </summary>
+        public class GetPlaneTicketQueryDto : IRequest<GetPriceTicketPriceResponse>
+        {
+            private int flightId;
+
+            public GetPlaneTicketQueryDto(int flightId)
+            {
+                this.flightId = flightId;
+            }
+        }
+
+        /// <summary>
         /// Update the price of a ticket for a specific flight
         /// </summary>
         /// <param name="flightId">Flight Id</param>
@@ -125,6 +127,9 @@ namespace Web.App.Controllers
             }
         }
 
+        /// <summary>
+        /// UpdateFlightPriceCommandDto class, transforms into UpdateFlightPriceCommandResponse
+        /// </summary>
         public class UpdateFlightPriceCommandDto : IRequest<UpdateFlightPriceCommandResponse>
         {
             int flightId { get; set; } 
