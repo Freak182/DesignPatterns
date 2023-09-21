@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 namespace Web.App.Controllers
 {
@@ -30,4 +32,63 @@ namespace Web.App.Controllers
             .ToArray();
         }
     }
+
+    //internal partial class ChangeTicketPrice_September2023: Migration
+    //{
+    //    protected override void Up(MigrationBuilder migrationBuilder) 
+    //    {
+    //        new ChangeTicketPrice_September2023DataSeed().ExecuteMigration(migrationBuilder);
+    //    }
+
+    //    protected override void Down(MigrationBuilder migrationBuilder)
+    //    {
+    //        new ChangeTicketPrice_September2023DataSeed().ExecuteMigration(migrationBuilder, true);
+    //    }
+    //}
+
+    //internal class ChangeTicketPrice_September2023DataSeed : ChangeTicketPriceDataSeed
+    //{
+    //    public override int oldTicketPrice => 100;
+    //    public override int newTicketPrice => 50;
+
+    //    public override void ExecuteMigration(MigrationBuilder migrationBuilder, Boolean dowm = false)
+    //    {
+    //        this.UpdateData(migrationBuilder, dowm);
+    //    }
+
+    //    public override void UpdateData(MigrationBuilder migrationBuilder, bool down)
+    //    {
+    //        ChangeTicketPriceTools.setTicketPrice(down ? oldTicketPrice : newTicketPrice);
+    //    }
+    //}
+
+    //internal abstract class ChangeTicketPriceDataSeed: MigrationDataSeed
+    //{
+    //    public abstract int oldTicketPrice { get; }
+    //    public abstract int newTicketPrice { get; }
+    //    public Boolean down { get; set; }
+    //}
+
+    //internal abstract class MigrationDataSeed : IMigrationDataSeed
+    //{
+    //    public DateTime ModificationDateTime => DateTime.Now;
+    //    public abstract void ExecuteMigration(MigrationBuilder migrationBuilder, Boolean down);
+    //    public abstract void UpdateData(MigrationBuilder migrationBuilder, Boolean down);
+    //}
+
+    //internal interface IMigrationDataSeed
+    //{
+    //    public DateTime ModificationDateTime { get; }
+    //    public abstract void ExecuteMigration(MigrationBuilder migrationBuilder, Boolean down);
+    //    public abstract void UpdateData(MigrationBuilder migrationBuilder, Boolean down);
+    //}
+
+    //public class ChangeTicketPriceTools
+    //{
+    //    internal static void setTicketPrice(int ticketPrice)
+    //    {
+    //        // Change ticket price with EF CORE
+    //    }
+    //}
 }
+
