@@ -611,19 +611,26 @@
               Migration est une méthodologie permettant de faire évoluer votre base de donnée de manière incrémentielle. C'est un outil qui vous permet de faire des back-and-forth sur les différentes versions de votre base de données de manière code-based. Un des gros avantages sera d'être capable de gérer ces migrations à même vos déploiements automatisé.<br>
               Selon Microsoft : 
               <ul>
-                <li>Lors de l’introduction d’une modification du modèle de données, le développeur utilise des outils EF Core afin d’ajouter une migration correspondante décrivant les mises à jour nécessaires pour préserver la synchronisation du schéma de la base de données. EF Core compare le modèle actuel à un instantané de l’ancien modèle pour déterminer les différences et génère des fichiers sources de migration. Ces fichiers peuvent, comme n’importe quel fichier source, faire l’objet d’un suivi dans le contrôle de code source du projet.</li>
+                <li>Lors de l'introduction d'une modification du modèle de données, le développeur utilise des outils EF Core afin d’ajouter une migration correspondante décrivant les mises à jour nécessaires pour préserver la synchronisation du schéma de la base de données. EF Core compare le modèle actuel à un instantané de l’ancien modèle pour déterminer les différences et génère des fichiers sources de migration. Ces fichiers peuvent, comme n’importe quel fichier source, faire l’objet d’un suivi dans le contrôle de code source du projet.</li>
                 <li>Une fois générée, la nouvelle migration peut être appliquée à une base de données de différentes façons. EF Core enregistre toutes les migrations appliquées dans une table d’historique spéciale, ce qui lui permet de savoir quelles migrations ont été appliquées.</li>
               </ul>
             </div>
-              <!-- Image : Migration -->
-              <div class="mb-2" style="display: flex;justify-content: center;">
-                <div>
-                  <img style="max-height: 288px;" src="src\images\migration.png" />
-                </div>
+            <!-- Image : Migration -->
+            <div class="mb-2" style="display: flex;justify-content: center;">
+              <div>
+                <img style="max-height: 350px;" src="https://github.com/Freak182/DesignPatterns/blob/main/Web.App/ClientApp/src/images/migration.png?raw=true" />
               </div>
-            <h2>Data Seeding</h2>
+            </div>
+
+            <h2>DataSeed Pattern: How to make migration clean and easy</h2>
             <div class="m-2">
-              
+              Le DataSeed pattern vous permets, une fois migration mis en place, d'interfacer vos migrations et ainsi de les regrouper sous une classe de modification simple. Basée sur le concept de DataSeeding de Microsoft, il redirige plutôt vers une classe donc la seule tâche est de gérer l'ensemble des logiques associées a une nouvelle version d'un object.
+            </div>
+            <!-- Image : DataSeed -->
+            <div class="mb-2" style="display: flex;justify-content: center;">
+              <div>
+                <img style="max-height: 350px;" src="https://github.com/Freak182/DesignPatterns/blob/main/Web.App/ClientApp/src/images/migration.png?raw=true" />
+              </div>
             </div>
 
             <hr class="m-2" style="color: silver;">
