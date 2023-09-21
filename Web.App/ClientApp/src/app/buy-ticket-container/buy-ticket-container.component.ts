@@ -16,11 +16,11 @@ export class BuyTicketContainerComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getCurrentPurchase().sub
+    this.getCurrentPurchase()
     this.createComponent();
   }
 
-  private getCurrentPurchase(): Obversable<PlaneTicketPurchaseResponse> {
+  private getCurrentPurchase() {
 
   }
   private createComponent(){

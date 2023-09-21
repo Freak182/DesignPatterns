@@ -1,7 +1,6 @@
-import { HttpClient, HttpHeaders, HttpRequest, HttpResponse } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, of, throwError } from "rxjs";
-import { filter, map, flatMap, catchError, retryWhen } from "rxjs/operators";
+import { Observable } from "rxjs";
 import { UrlBuilderService } from "./url-builder-service";
 
 @Injectable()

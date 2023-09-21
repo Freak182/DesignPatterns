@@ -20,7 +20,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { BuyTicketContainerComponent } from './buy-ticket-container/buy-ticket-container.component';
 import { UrlBuilderService } from './services/url-builder-service';
 
 @NgModule({
@@ -29,8 +28,7 @@ import { UrlBuilderService } from './services/url-builder-service';
     NavMenuComponent,
     HomeComponent,
     DocumentationComponent,
-    ExampleComponent,
-      BuyTicketContainerComponent
+    ExampleComponent
    ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -49,7 +47,6 @@ import { UrlBuilderService } from './services/url-builder-service';
     MatButtonModule
   ],
   providers: [
-    UrlBuilderService
   ],
   bootstrap: [AppComponent]
 })
