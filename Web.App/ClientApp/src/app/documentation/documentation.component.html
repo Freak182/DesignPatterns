@@ -622,11 +622,55 @@
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Proxy
+                Pattern: Proxy | Api Gateway
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <h2>What is Proxy design pattern ?</h2>
-            Data : https://en.wikipedia.org/wiki/Proxy_pattern
+            <h2>API Gateway Design Pattern</h2>
+            <div class="m-2">
+              Selon wikipedia :<br>
+              <div class="m-2">
+                A proxy, in its most general form, is a class functioning as an interface to something else. The proxy could interface to anything: a network connection, a large object in memory, a file, or some other resource that is expensive or impossible to duplicate. In short, a proxy is a wrapper or agent object that is being called by the client to access the real serving object behind the scenes.
+              </div>
+              <!-- Image : Standard proxy -->
+              <div class="mb-2" style="display: flex;justify-content: center;">
+                <div>
+                  <img style="max-height: 288px;" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/W3sDesign_Proxy_Design_Pattern_UML.jpg" />
+                </div>
+              </div>
+
+              <div class="m-2">
+                Dans le cadre d'un API, le proxy se manifeste sous forme d'API gateway. Il peut servir de point centrale de gestion des permissions, contrôle du traffic, gestion des micro-frontends et autres. Il sert de point de répartition des communications avec les différents services. On appel souvent ce gateway un BFF lorsque nous parlons d'une application FrontEnd.
+              </div>
+
+              <!-- Image : Microsoft -->
+              <div class="mb-2" style="display: flex;justify-content: center;">
+                <div>
+                  <img style="max-height: 288px;max-width: 100%;" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/08/API-Gateway-Microservices-Design-Patterns-Edureka.png" />
+                  <div><small>*All rights owned by Microsoft</small></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- When to use -->
+            <span>
+              <h3>Quand utiliser ce pattern?</h3>
+              <ul>
+                <li>Lorsque vous désirez vous assurer de la consistance d'une donnée au travers multiple système</li>
+                <li>Lorsque vous désirez effectuer des rollbacks ou correctifs si un des appels échoue</li>
+                <li>Lorsque vous désirez cacher l'url de vos APIs</li>
+              </ul>
+            </span>
+
+            <hr class="m-2" style="color: silver;">
+            <div class="mt-2">
+              Want to know more ? 
+              <ul>
+                <li><a href="https://www.dofactory.com/net/mediator-design-pattern" target="_blank">Microsoft - Implement the microservice application layer using the Web API</a></li>
+                <li><a href="https://www.dofactory.com/net/mediator-design-pattern" target="_blank">DoFactory - C# Mediator</a></li>
+                <li><a href="https://www.c-sharpcorner.com/article/implementing-cqrs-and-mediator-patterns-with-asp-net-core-web-api/" target="_blank">C# Corner - Implementing CQRS And Mediator Patterns With ASP.NET Core Web API</a></li>
+                <li><a href="https://medium.com/swlh/mediator-pattern-in-asp-net-core-applications-109b4231c0f8" target="_blank"><span style="color: red;"><strong>(PAYANT)</strong></span> Medium - Mediator Pattern in ASP.NET Core Applications</a></li>
+              </ul>
+            </div>
           </mat-expansion-panel>
         </div>
       </div>
