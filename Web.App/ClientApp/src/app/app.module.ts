@@ -4,28 +4,33 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Component
 import { DocumentationComponent } from './documentation/documentation.component';
+import { AppComponent } from './app.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { HomeComponent } from './home/home.component';
+import { ExampleComponent } from './example/example.component';
 
 // Material
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { BuyTicketContainerComponent } from './buy-ticket-container/buy-ticket-container.component';
+import { UrlBuilderService } from './services/url-builder-service';
 
 @NgModule({
-  declarations: [	
+  declarations: [			
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    FetchDataComponent,
-    DocumentationComponent
+    DocumentationComponent,
+    ExampleComponent,
+      BuyTicketContainerComponent
    ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,15 +39,18 @@ import { MatInputModule } from '@angular/material/input';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'documentation', component: DocumentationComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'example', component: ExampleComponent },
     ]),
     BrowserAnimationsModule,
     MatExpansionModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ],
-  providers: [],
+  providers: [
+    UrlBuilderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
