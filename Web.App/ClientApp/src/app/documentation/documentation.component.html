@@ -820,7 +820,46 @@ mock.Received.SomeMethod();</textarea>
                 Pattern: Mediator
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <h2>How to have a clean back-end</h2>
+            <h2>Mediator pattern in an ASP.NET Web API</h2>
+            <div class="m-2">
+              Le modèle médiateur permet de gérer les dépendances entre les objets en les empêchant de communiquer directement entre eux. Au lieu de cela, la communication se fait via un médiateur. Par exemple, un service envoie sa demande au médiateur qui la transmet à son tour au gestionnaire de demandes respectif pour traitement. En ayant un médiateur entre les deux, nous pouvons dissocier les demandes de leurs gestionnaires. L'expéditeur n'a pas besoin de savoir quoi que ce soit sur le gestionnaire. Le modèle médiateur aide à implémenter <a href="" title="Command Query Responsibility Segregation : Separates read and write operations"><strong style="color: black;">CQRS</strong></a>. Les commandes et requêtes sont envoyées au médiateur qui les mappe à leurs gestionnaires respectifs.<br>
+              <!-- Image : Tutorialspoints -->
+              <div class="mb-2" style="display: flex;justify-content: center;">
+                <div>
+                  <img style="max-height: 288px;" src="https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/media/microservice-application-layer-implementation-web-api/high-level-writes-side.png" />
+                  <div><small>*All rights owned by Microsoft</small></div>
+                </div>
+              </div>
+
+              <!-- Composants -->
+              <span>
+                <h3>Les composants :</h3>
+                <ul>
+                  <li>Commands</li>
+                  <ul style="padding-bottom: 0;">
+                    <li style="margin-left:2em">Perform writes, updates, or delete operations on the data</li>
+                   </ul>
+                  <li>Queries</li>
+                  <ul style="padding-bottom: 0;">
+                    <li style="margin-left:2em">Represents data reads</li>
+                   </ul>
+                  <li>Handlers</li>
+                  <ul style="padding-bottom: 0;">
+                    <li style="margin-left:2em">Responsible for receiving the commands, they implement business behavior</li>
+                  </ul>
+                </ul>
+              </span>
+            </div>
+            <hr class="m-2" style="color: silver;">
+            <div class="mt-2">
+              Want to know more ? 
+              <ul>
+                <li><a href="https://www.dofactory.com/net/mediator-design-pattern" target="_blank">Microsoft - Implement the microservice application layer using the Web API</a></li>
+                <li><a href="https://www.dofactory.com/net/mediator-design-pattern" target="_blank">DoFactory - C# Mediator</a></li>
+                <li><a href="https://www.c-sharpcorner.com/article/implementing-cqrs-and-mediator-patterns-with-asp-net-core-web-api/" target="_blank">C# Corner - Implementing CQRS And Mediator Patterns With ASP.NET Core Web API</a></li>
+                <li><a href="https://medium.com/swlh/mediator-pattern-in-asp-net-core-applications-109b4231c0f8" target="_blank"><span style="color: red;"><strong>(PAYANT)</strong></span> Medium - Mediator Pattern in ASP.NET Core Applications</a></li>
+              </ul>
+            </div>
           </mat-expansion-panel>
         </div>
       </div>
