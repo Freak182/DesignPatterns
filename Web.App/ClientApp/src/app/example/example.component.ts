@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlaneTicketPurchaseService } from '../services/plane-ticket-purchase.service';
+import { PlaneTicketPurchaseResponse } from '../entities/PlaneTicketPurchase';
 
 @Component({
   selector: 'app-example',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExampleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ticketService : PlaneTicketPurchaseService) { }
 
   ngOnInit() {
+    this.ticketService.getPlaneTicketPurchase(1).subscribe((price : PlaneTicketPurchaseResponse) => {
+      console.log(price);
+      debugger;
+    });
   }
-
 }

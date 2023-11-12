@@ -12,6 +12,7 @@ export class HttpClientBase {
         }
     
     public get<T>(endpointPath: string): Observable<T> {
+        console.log("Calling", this.urlBuilderService.getBaseURL() + endpointPath)
         return this.http.get<T>(this.urlBuilderService.getBaseURL() + endpointPath);
     }
 }
