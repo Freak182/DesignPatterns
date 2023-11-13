@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using System.Reflection.Metadata;
-using Web.App.Entity.Mapping.Common;
+using Web.App.Database.Mapping.Common;
 
 namespace Web.App.Database
 {
