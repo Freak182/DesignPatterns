@@ -14,6 +14,6 @@ export class ReservationService extends HttpBaseService {
     }
 
     public getReservation(reservationId: number) : Observable<ReservationResponse> {
-        return super.get<ReservationResponse>(ConnectionConstants.API_ENDPOINTS.RESERVATION)
+      return super.get<ReservationResponse>(ConnectionConstants.API_ENDPOINTS.RESERVATION + `?reservationId=${reservationId}`);
     }
 }
