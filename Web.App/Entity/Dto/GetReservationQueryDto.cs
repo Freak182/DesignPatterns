@@ -7,9 +7,9 @@ namespace Web.App.Entity.Dto
     {
         public GetReservationQueryDto() { }
 
-        public GetReservationQueryDto(int flightId)
+        public GetReservationQueryDto(int planeId)
         {
-            this.ReservationId = flightId;
+            this.ReservationId = planeId;
         }
 
         public int ReservationId;

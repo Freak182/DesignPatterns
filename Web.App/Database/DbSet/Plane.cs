@@ -1,6 +1,6 @@
 ﻿namespace Web.App.Database.DbSet
 {
-    public class Flight : EntityWithIdBase
+    public class Plane : EntityWithIdBase
     {
         public int Price { get; set; }
     }

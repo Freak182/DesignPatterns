@@ -25,9 +25,9 @@ namespace Web.App.Database.Mapping
                 .HasColumnType(MappingConstants.Database.Types.Varchar);
 
             builder
-                .HasOne(x => x.Flight)
+                .HasOne(x => x.Plane)
                 .WithMany()
-                .HasForeignKey("FlightId");
+                .HasForeignKey("PlaneId");
         }
     }
 }

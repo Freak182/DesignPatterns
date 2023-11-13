@@ -2,7 +2,10 @@
 {
     public class GetReservationResponse
     {
-        public int Id { get; set; }
+        public int ReservationId { get; set; }
+
+        public int Plane { get; set; }
+
         public string? State { get; set; }
     }
 }

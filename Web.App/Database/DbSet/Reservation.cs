@@ -2,7 +2,7 @@
 {
     public class Reservation : EntityWithIdBase
     {
-        public Flight? Flight { get; set; }
+        public Plane? Plane { get; set; }
 
         public string? State { get; set; }
     }

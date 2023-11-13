@@ -10,11 +10,11 @@ namespace Web.App.Entity.Dto
     {
         public GetPlaneTicketQueryDto() { }
 
-        public GetPlaneTicketQueryDto(int flightId)
+        public GetPlaneTicketQueryDto(int planeId)
         {
-            this.FlightId = flightId;
+            this.PlaneId = planeId;
         }
 
-        public int FlightId;
+        public int PlaneId;
     }
 }

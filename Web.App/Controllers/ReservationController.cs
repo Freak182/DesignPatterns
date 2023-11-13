@@ -11,10 +11,10 @@ namespace Web.App.Controllers
     [Route("/api/reservations")]
     public class ReservationController : BaseController
     {
-        private readonly ILogger<FlightTicketController> _logger;
+        private readonly ILogger<PlaneTicketController> _logger;
         private readonly IMediator _mediator;
 
-        public ReservationController(ILogger<FlightTicketController> logger, IMediator mediator)
+        public ReservationController(ILogger<PlaneTicketController> logger, IMediator mediator)
         {
             _logger = logger;
             _mediator = mediator;

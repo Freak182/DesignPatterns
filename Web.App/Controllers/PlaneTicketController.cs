@@ -8,13 +8,13 @@ using Web.App.Entity.Response;
 namespace Web.App.Controllers
 {
     [ApiController]
-    [Route("/api/flightticket")]
-    public class FlightTicketController : BaseController
+    [Route("/api/planeflightticket")]
+    public class PlaneTicketController : BaseController
     {
-        private readonly ILogger<FlightTicketController> _logger;
+        private readonly ILogger<PlaneTicketController> _logger;
         private readonly IMediator _mediator;
 
-        public FlightTicketController(ILogger<FlightTicketController> logger, IMediator mediator)
+        public PlaneTicketController(ILogger<PlaneTicketController> logger, IMediator mediator)
         {
             _logger = logger;
             _mediator = mediator;
@@ -23,7 +23,7 @@ namespace Web.App.Controllers
         /// <summary>
         /// Get plane ticket price for a specific flight
         /// </summary>
-        /// <param name="flightId">Flight Id</param>
+        /// <param name="planeId">Flight Id</param>
         /// <param name="cancellationToken">Cancellation token</param>
         /// <response code="200">Succesfully returned the flight price</response>
         /// <response code="204">No flight was found</response>
@@ -31,15 +31,15 @@ namespace Web.App.Controllers
         /// <response code="403">Unauthorized/Forbiden</response>
         /// <response code="500">Internal/Service error(s)</response>
         [HttpGet]
-        [Route("resources/flights/{flightId:int}/price")]
+        [Route("resources/plane/{plane:int}/price")]
         [ProducesResponseType(typeof(GetPlaneTicketPriceResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status403Forbidden)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetPlaneTicketPrice([FromQuery][Required] int flightId)
+        public async Task<IActionResult> GetPlaneTicketPrice([FromQuery][Required] int planeId)
         {
-            return Ok(await _mediator.Send(new GetPlaneTicketQueryDto(flightId), CancellationToken.None));
+            return Ok(await _mediator.Send(new GetPlaneTicketQueryDto(planeId), CancellationToken.None));
         }
     }
 }

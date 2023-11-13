@@ -12,7 +12,7 @@ using Web.App.Database;
 namespace Web.App.Migrations
 {
     [DbContext(typeof(FlightDbContext))]
-    [Migration("20231113062256_init-database")]
+    [Migration("20231113093407_init-database")]
     partial class initdatabase
     {
         /// <inheritdoc />
@@ -23,12 +23,12 @@ namespace Web.App.Migrations
                 .HasAnnotation("ProductVersion", "7.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Web.App.Database.DbSet.Flight", b =>
+            modelBuilder.Entity("Web.App.Database.DbSet.Plane", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("FlightId")
+                        .HasColumnName("PlaneId")
                         .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Price")
@@ -37,7 +37,7 @@ namespace Web.App.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Flights", (string)null);
+                    b.ToTable("Plane", (string)null);
                 });
 
             modelBuilder.Entity("Web.App.Database.DbSet.Reservation", b =>
@@ -48,7 +48,7 @@ namespace Web.App.Migrations
                         .HasColumnName("ReservationId")
                         .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("FlightId")
+                    b.Property<int?>("PlaneId")
                         .HasColumnType("int");
 
                     b.Property<string>("State")
@@ -58,18 +58,18 @@ namespace Web.App.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FlightId");
+                    b.HasIndex("PlaneId");
 
                     b.ToTable("Reservations", (string)null);
                 });
 
             modelBuilder.Entity("Web.App.Database.DbSet.Reservation", b =>
                 {
-                    b.HasOne("Web.App.Database.DbSet.Flight", "Flight")
+                    b.HasOne("Web.App.Database.DbSet.Plane", "Plane")
                         .WithMany()
-                        .HasForeignKey("FlightId");
+                        .HasForeignKey("PlaneId");
 
-                    b.Navigation("Flight");
+                    b.Navigation("Plane");
                 });
 #pragma warning restore 612, 618
         }

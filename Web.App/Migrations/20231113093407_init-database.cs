@@ -15,16 +15,16 @@ namespace Web.App.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Flights",
+                name: "Plane",
                 columns: table => new
                 {
-                    FlightId = table.Column<int>(type: "int", nullable: false)
+                    PlaneId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Price = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Flights", x => x.FlightId);
+                    table.PrimaryKey("PK_Plane", x => x.PlaneId);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -34,7 +34,7 @@ namespace Web.App.Migrations
                 {
                     ReservationId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    FlightId = table.Column<int>(type: "int", nullable: true),
+                    PlaneId = table.Column<int>(type: "int", nullable: true),
                     State = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
@@ -42,17 +42,17 @@ namespace Web.App.Migrations
                 {
                     table.PrimaryKey("PK_Reservations", x => x.ReservationId);
                     table.ForeignKey(
-                        name: "FK_Reservations_Flights_FlightId",
-                        column: x => x.FlightId,
-                        principalTable: "Flights",
-                        principalColumn: "FlightId");
+                        name: "FK_Reservations_Plane_PlaneId",
+                        column: x => x.PlaneId,
+                        principalTable: "Plane",
+                        principalColumn: "PlaneId");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reservations_FlightId",
+                name: "IX_Reservations_PlaneId",
                 table: "Reservations",
-                column: "FlightId");
+                column: "PlaneId");
         }
 
         /// <inheritdoc />
@@ -62,7 +62,7 @@ namespace Web.App.Migrations
                 name: "Reservations");
 
             migrationBuilder.DropTable(
-                name: "Flights");
+                name: "Plane");
         }
     }
 }

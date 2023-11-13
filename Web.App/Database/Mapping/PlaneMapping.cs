@@ -5,18 +5,18 @@ using Web.App.Database.Mapping.Common;
 
 namespace Web.App.Database.Mapping.FlightsMapping
 {
-    public class FlightsMapping : EntityTypeWithIdConfiguration<Flight>
+    public class PlaneMapping : EntityTypeWithIdConfiguration<Plane>
     {
-        public override void Map(EntityTypeBuilder<Flight> builder, bool isInMemory = false)
+        public override void Map(EntityTypeBuilder<Plane> builder, bool isInMemory = false)
         {
             base.Map(builder, isInMemory);
 
             builder
-                .ToTable("Flights");
+                .ToTable("Plane");
 
             builder
                 .Property(x => x.Id)
-                .HasColumnName("FlightId");
+                .HasColumnName("PlaneId");
 
             builder
                 .Property(x => x.Price)
