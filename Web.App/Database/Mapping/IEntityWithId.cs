@@ -1,4 +1,4 @@
-﻿namespace Web.App.Entity.Common
+﻿namespace Web.App.Database.Mapping
 {
     /// <summary>
     /// Base entity with Id 

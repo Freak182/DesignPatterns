@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Web.App.Entity.Mapping.Common
+namespace Web.App.Database.Mapping.Common
 {
     public interface IEntityMapping
     {
