@@ -19,15 +19,15 @@ namespace Web.App.Database.Mapping
                 .HasColumnName("ReservationId");
 
             builder
-                .Property(x => x.FlightsId)
-                .HasColumnName("FlightsId");
-
-            builder
                 .Property(x => x.State)
                 .IsRequired()
                 .HasMaxLength(MappingConstants.Database.Lengths.RefCodeLength)
                 .HasColumnType(MappingConstants.Database.Types.Varchar);
 
+            builder
+                .HasOne(x => x.Flight)
+                .WithMany()
+                .HasForeignKey("FlightId");
         }
     }
 }
