@@ -31,15 +31,14 @@ namespace Web.App.Controllers
         /// <response code="403">Unauthorized/Forbiden</response>
         /// <response code="500">Internal/Service error(s)</response>
         [HttpGet]
-        [Route("resources/flights/{flightId:int}/price")]
         [ProducesResponseType(typeof(GetReservationResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status403Forbidden)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetPlaneTicketPrice([FromQuery][Required] int reservationId)
+        public async Task<IActionResult> GetReservation([FromQuery][Required] int reservationId)
         {
-            return Ok(await _mediator.Send(new GetPlaneTicketQueryDto(reservationId), CancellationToken.None));
+            return Ok(await _mediator.Send(new GetReservationQueryDto(reservationId), CancellationToken.None));
         }
     }
 }

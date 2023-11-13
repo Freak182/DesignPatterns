@@ -3,7 +3,7 @@ using Web.App.Database;
 
 namespace Web.App.Application.Common
 {
-    public class EntityWIthIdService<TEntity> : IEntityWIthIdService<TEntity>
+    public class EntityWIthIdService<TEntity> : IEntityWithIdService<TEntity>
         where TEntity : EntityWithIdBase
     {
         protected readonly IEntityWithIdRepository<TEntity> _entityRepository;

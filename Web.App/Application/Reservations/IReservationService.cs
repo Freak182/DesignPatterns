@@ -3,7 +3,7 @@ using Web.App.Database.DbSet;
 
 namespace Web.App.Application.Reservations
 {
-    public interface IReservationService : IEntityWIthIdService<Reservation>
+    public interface IReservationService : IEntityWithIdService<Reservation>
     {
 
     }

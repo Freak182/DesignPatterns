@@ -3,7 +3,7 @@ using Web.App.Database.Mapping.Common;
 
 namespace Web.App.Application.Common
 {
-    public interface IEntityWIthIdService<TEntity> where TEntity : EntityWithIdBase
+    public interface IEntityWithIdService<TEntity> where TEntity : EntityWithIdBase
     {
         /// <summary>
         /// Get entity by id

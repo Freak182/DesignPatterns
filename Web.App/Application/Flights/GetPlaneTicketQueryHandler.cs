@@ -7,12 +7,12 @@ namespace Web.App.Application.Flights
     /// <summary>
     /// QueryHandler that get a plane ticket price
     /// </summary>
-    public class GetPlaneTicketQueryHandler : IRequestHandler<GetPlaneTicketQueryDto, GetFlightTicketPriceResponse>
+    public class GetPlaneTicketQueryHandler : IRequestHandler<GetPlaneTicketQueryDto, GetPlaneTicketPriceResponse>
     {
-        public async Task<GetFlightTicketPriceResponse> Handle(GetPlaneTicketQueryDto query, CancellationToken cancellationToken)
+        public async Task<GetPlaneTicketPriceResponse> Handle(GetPlaneTicketQueryDto query, CancellationToken cancellationToken)
         {
             // Get
-            var result = new GetFlightTicketPriceResponse()
+            var result = new GetPlaneTicketPriceResponse()
             {
                 Id = 1,
                 Price = 123

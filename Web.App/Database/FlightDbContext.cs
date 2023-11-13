@@ -3,7 +3,7 @@ using Web.App.Database.Mapping.Common;
 
 namespace Web.App.Database
 {
-    public class FlightDbContext : DbContext
+    public class FlightDbContext : DbContext, IDbContext
     {
         public FlightDbContext() { }
 

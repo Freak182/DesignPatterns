@@ -22,13 +22,13 @@ namespace Web.App.Application.Reservations.Queries
         public async Task<GetReservationResponse> Handle(GetReservationQueryDto query, CancellationToken cancellationToken)
         {
             // Get
-            var reservations = new GetReservationResponse();
-            
+            var reservations = _reservationService.GetById(query.ReservationId);
+
             // Map
             var response = _mapper.Map<GetReservationResponse>(reservations);
 
             // Return
-            return reservations;
+            return response;
         }
     }
 }

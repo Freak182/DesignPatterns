@@ -6,7 +6,7 @@ namespace Web.App.Entity.Dto
     /// <summary>
     /// GetPlaneTicketQuery class, transforms into GetPriceTicketPriceResponse
     /// </summary>
-    public class GetPlaneTicketQueryDto : IRequest<GetFlightTicketPriceResponse>
+    public class GetPlaneTicketQueryDto : IRequest<GetPlaneTicketPriceResponse>
     {
         public GetPlaneTicketQueryDto() { }
 

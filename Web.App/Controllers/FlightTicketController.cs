@@ -32,7 +32,7 @@ namespace Web.App.Controllers
         /// <response code="500">Internal/Service error(s)</response>
         [HttpGet]
         [Route("resources/flights/{flightId:int}/price")]
-        [ProducesResponseType(typeof(GetFlightTicketPriceResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(GetPlaneTicketPriceResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status403Forbidden)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status404NotFound)]

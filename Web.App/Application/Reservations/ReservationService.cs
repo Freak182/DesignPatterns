@@ -4,11 +4,23 @@ using Web.App.Database.DbSet;
 
 namespace Web.App.Application.Reservations
 {
-    public class ReservationService : EntityWIthIdService<Reservation>, IReservationService
+    public class ReservationService : IReservationService
     {
-        public ReservationService(IReservationRepository entityRepository) 
-            : base(entityRepository)
+        protected readonly IReservationRepository _reservationRepository;
+
+        public ReservationService(IReservationRepository reservationRepository)
         {
+            _reservationRepository = reservationRepository;
+        }
+
+        /// <summary>
+        /// Get entity by id
+        /// </summary>
+        /// <param name="id">Entity id</param>
+        /// <returns></returns>
+        public Reservation GetById(int id)
+        {
+            return _reservationRepository.GetById(id);
         }
     }
 }
