@@ -1,6 +1,12 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.OpenApi.Models;
+using MediatR;
 using static System.Net.Mime.MediaTypeNames;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+using Web.App;
+using System.Runtime.CompilerServices;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -27,6 +33,14 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
+
+// Migration
+builder.Services.AddInfrastructure();
+
+foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+{
+    builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(assembly));
+}
 
 var app = builder.Build();
 

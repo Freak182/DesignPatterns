@@ -1,13 +1,10 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace Web.App.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/weatherforecast")]
     public class WeatherForecastController : BaseController
     {
         private static readonly string[] Summaries = new[]
@@ -18,9 +15,10 @@ namespace Web.App.Controllers
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly IMediator _mediator;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IMediator mediator)
         {
             _logger = logger;
+            _mediator = mediator;
         }
 
         [HttpGet]

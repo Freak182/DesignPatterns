@@ -1,3 +1,5 @@
-export class ConnectionConstants {
-    public static BASE_URL : string = 'https://localhost:7062/';
+export namespace ConnectionConstants {
+    export class API_ENDPOINTS {
+        public static readonly FLIGHTS_TICKETS : string = "flightticket/";
+    }
 }
