@@ -10,8 +10,6 @@ namespace Web.App.Database.Mapping.Profile
         {
             CreateMap<Reservation, GetReservationResponse>()
                 .ForMember(dest => dest.ReservationId, opt => opt.MapFrom(source => source.Id));
-                //.ForMember(dest => dest.State, opt => opt.MapFrom(source => source.State))
-                //.ForMember(dest => dest.Plane, opt => opt.MapFrom(source => source.Plane));
         }
     }
 }

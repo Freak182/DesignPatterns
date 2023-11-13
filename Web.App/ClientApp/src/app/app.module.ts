@@ -21,8 +21,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { PlaneTicketPurchaseService } from './services/plane-ticket-purchase.service';
-import { HttpClientBase } from './services/httpClientBase';
-import { UrlBuilderService } from './services/url-builder-service';
+import { HttpClientBase } from './services/base/httpClientBase';
+import { UrlBuilderService } from './services/base/url-builder-service';
+import { ReservationService } from './services/reservation.service';
 
 @NgModule({
   declarations: [			
@@ -50,6 +51,7 @@ import { UrlBuilderService } from './services/url-builder-service';
   ],
   providers: [
     PlaneTicketPurchaseService,
+    ReservationService,
     HttpClientBase,
     UrlBuilderService
   ],

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlaneTicketPurchaseResponse } from '../entities/PlaneTicketPurchase';
+import { PlaneTicketPurchaseResponse } from '../entities/PlaneTicketPurchaseResponse';
 import { PlaneTicketPurchaseService } from '../services/plane-ticket-purchase.service';
 
 @Component({
