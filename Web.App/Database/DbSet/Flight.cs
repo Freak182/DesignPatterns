@@ -1,6 +1,4 @@
-﻿using Web.App.Entity.Response;
-
-namespace Web.App.Database.DbSet
+﻿namespace Web.App.Database.DbSet
 {
     public class Flight : EntityWithIdBase
     {

@@ -1,6 +1,4 @@
-﻿using static Web.App.Controllers.FlightTicketController;
-
-namespace Web.App.Entity.Common
+﻿namespace Web.App.Entity.Common
 {
     public class ErrorInfo : System.Object
     {

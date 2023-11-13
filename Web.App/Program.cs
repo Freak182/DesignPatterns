@@ -1,12 +1,6 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.OpenApi.Models;
 using MediatR;
-using static System.Net.Mime.MediaTypeNames;
-using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
 using Web.App;
-using System.Runtime.CompilerServices;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Web.App.Database;
-using Web.App.Entity.Common;
 
 namespace Web.App.Entity.Common
 {

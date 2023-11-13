@@ -1,12 +1,11 @@
 ﻿using MediatR;
-using static Web.App.Controllers.FlightTicketController;
 using Web.App.Entity.Response;
 using Web.App.Entity.Dto;
 
 namespace Web.App.Application.Flights
 {
     /// <summary>
-    /// QueryHandler that updates a plane ticket price
+    /// QueryHandler that get a plane ticket price
     /// </summary>
     public class GetPlaneTicketQueryHandler : IRequestHandler<GetPlaneTicketQueryDto, GetFlightTicketPriceResponse>
     {
