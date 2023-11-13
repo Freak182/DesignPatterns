@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using Web.App.Entity.Mapping.Common;
 
 namespace Web.App.Database.Mapping.Common
 {

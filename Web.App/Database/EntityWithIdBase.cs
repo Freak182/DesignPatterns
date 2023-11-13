@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Web.App.Database.Mapping;
+using Web.App.Database.Mapping.Common;
 
 namespace Web.App.Database
 {

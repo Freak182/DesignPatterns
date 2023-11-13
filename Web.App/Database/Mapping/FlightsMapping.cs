@@ -5,9 +5,9 @@ using Web.App.Database.Mapping.Common;
 
 namespace Web.App.Database.Mapping.FlightsMapping
 {
-    public class FlightsMapping : EntityTypeWithIdConfiguration<Flights>
+    public class FlightsMapping : EntityTypeWithIdConfiguration<Flight>
     {
-        public override void Map(EntityTypeBuilder<Flights> builder, bool isInMemory = false)
+        public override void Map(EntityTypeBuilder<Flight> builder, bool isInMemory = false)
         {
             base.Map(builder, isInMemory);
 
@@ -16,7 +16,7 @@ namespace Web.App.Database.Mapping.FlightsMapping
 
             builder
                 .Property(x => x.Id)
-                .HasColumnName("FlightsId");
+                .HasColumnName("FlightId");
 
             builder
                 .Property(x => x.Price)
