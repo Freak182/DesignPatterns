@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
-using Web.App.Database;
+﻿using Web.App.Database;
 using Web.App.Database.DbSet;
 
 namespace Web.App.Application.Repositories
