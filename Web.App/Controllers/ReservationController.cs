@@ -44,20 +44,15 @@ namespace Web.App.Controllers
         /// <summary>
         /// Create a new reservation
         /// </summary>
-        /// <param name="reservationId">Reservation Id</param>
-        /// <param name="cancellationToken">Cancellation token</param>
-        /// <response code="200">Succesfully returned the flight price</response>
-        /// <response code="204">No flight was found</response>
-        /// <response code="400">An error has occured</response>
-        /// <response code="403">Unauthorized/Forbiden</response>
-        /// <response code="500">Internal/Service error(s)</response>
+        /// <param name="command">Command with new object</param>
+        /// <returns></returns>
         [HttpPost]
-        [ProducesResponseType(typeof(GetReservationResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(CreateReservationCommandResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status403Forbidden)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorInfo), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetReservation([FromBody][Required] CreateReservationCommandDto command)
+        public async Task<IActionResult> CreateReservation([FromBody][Required] CreateReservationCommandDto command)
         {
             return Ok(await _mediator.Send(command, CancellationToken.None));
         }

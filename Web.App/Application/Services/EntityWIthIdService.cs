@@ -37,5 +37,17 @@ namespace Web.App.Application.Common
         {
             return _entityRepository.GetByIdWithDetails(id, includes);
         }
+
+        /// <summary>
+        /// Attach graph and create new objects where needed.
+        /// Attach has the advantage of including children compared to a _context.Add()
+        /// https://gavilan.blog/2018/12/09/entity-framework-core-difference-between-add-entry-and-attach-methods/
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public Task<TEntity> CreateEntity(TEntity entity)
+        {
+            return _entityRepository.CreateEntity(entity);
+        }
     }
 }

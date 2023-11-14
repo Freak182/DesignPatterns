@@ -21,8 +21,8 @@ namespace Web.App.Application.Reservations.Command
 
         public async Task<CreateReservationCommandResponse> Handle(CreateReservationCommandDto command, CancellationToken cancellationToken)
         {
-            // Get
-            var reservations = _reservationService.CreateEntity(_mapper.Map<Reservation>(command));
+            // Create
+            var reservations = await _reservationService.CreateEntity(_mapper.Map<Reservation>(command));
 
             // Map
             var response = _mapper.Map<CreateReservationCommandResponse>(reservations);
